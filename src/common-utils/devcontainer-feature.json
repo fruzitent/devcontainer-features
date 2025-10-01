@@ -1,0 +1,32 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {},
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/var/cache/apt/",
+          "type": "cache"
+        },
+        {
+          "sharing": "locked",
+          "target": "/var/lib/apt/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  "description": "Installs a set of common command line utilities",
+  "documentationURL": "https://github.com/fruzitent/devcontainer-features/tree/main/src/common-utils",
+  "id": "common-utils",
+  "installsAfter": [],
+  "name": "Common Utilities",
+  "options": {},
+  "version": "0.0.0"
+}
