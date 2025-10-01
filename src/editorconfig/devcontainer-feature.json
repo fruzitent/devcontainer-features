@@ -1,0 +1,37 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "NODE_PATH": "/opt/editorconfig/node_modules:${NODE_PATH}",
+    "PATH": "/opt/editorconfig/node_modules/.bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/root/.npm/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["EditorConfig.EditorConfig"],
+      "settings": {}
+    }
+  },
+  "description": "EditorConfig Core library and command line utility written in JavaScript",
+  "documentationURL": "https://github.com/editorconfig/editorconfig-core-js",
+  "id": "editorconfig",
+  "installsAfter": ["./features/src/node/"],
+  "name": "EditorConfig JavaScript Core (via npm)",
+  "options": {
+    "version": {
+      "default": "3.0.1",
+      "description": "https://npmjs.com/package/editorconfig?activeTab=versions",
+      "proposals": ["3.0.1"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
