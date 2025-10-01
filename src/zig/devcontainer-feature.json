@@ -1,0 +1,41 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/zig/local/bin:/opt/zig/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/zig/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  "description": "General-purpose programming language and toolchain for maintaining robust, optimal, and reusable software",
+  "documentationURL": "https://github.com/ziglang/zig",
+  "id": "zig",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "zig (via external)",
+  "options": {
+    "version": {
+      "default": "0.15.1",
+      "description": "https://ziglang.org/download",
+      "proposals": ["0.15.1"],
+      "type": "string"
+    },
+    "zsf_public_key": {
+      "default": "RWSGOq2NVecA2UPNdBUZykf1CCb147pkmdtYxgb3Ti+JO/wCYvhbAb/U",
+      "description": "https://ziglang.org/download",
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}

@@ -19,4 +19,5 @@ apt-get -y install --no-install-recommends \
     "gpgv" \
     "jq" \
     "libarchive-tools" \
+    "minisign" \
     ;
