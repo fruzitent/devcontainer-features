@@ -1,0 +1,38 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/taplo/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/taplo/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["tamasfe.even-better-toml"],
+      "settings": {
+        "[toml]": { "editor.defaultFormatter": "tamasfe.even-better-toml" }
+      }
+    }
+  },
+  "description": "A TOML toolkit written in Rust",
+  "documentationURL": "https://github.com/tamasfe/taplo",
+  "id": "taplo",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "Taplo (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "0.10.0",
+      "description": "https://github.com/tamasfe/taplo/releases",
+      "proposals": ["0.10.0"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
