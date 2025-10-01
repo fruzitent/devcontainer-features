@@ -1,0 +1,38 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "NODE_PATH": "/usr/local/lib/node_modules",
+    "NPM_CONFIG_CACHE": "/root/.npm/",
+    "PATH": "/opt/node/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/node/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+  "documentationURL": "https://github.com/nodejs/node",
+  "id": "node",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "Node.js (via external)",
+  "options": {
+    "version": {
+      "default": "v24.9.0",
+      "description": "https://nodejs.org/en/download/archive/current",
+      "proposals": ["v24.9.0"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}

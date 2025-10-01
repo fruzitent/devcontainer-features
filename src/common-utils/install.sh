@@ -15,4 +15,8 @@ echo "Binary::apt::APT::Keep-Downloaded-Packages \"true\";" | install -D "/dev/s
 apt-get -y update
 apt-get -y install --no-install-recommends \
     "ca-certificates" \
+    "curl" \
+    "gpgv" \
+    "jq" \
+    "libarchive-tools" \
     ;
