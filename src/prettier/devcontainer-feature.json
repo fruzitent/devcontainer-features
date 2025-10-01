@@ -1,0 +1,39 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "NODE_PATH": "/opt/prettier/node_modules:${NODE_PATH}",
+    "PATH": "/opt/prettier/node_modules/.bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/root/.npm/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"],
+      "settings": {
+        "[json][jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+      }
+    }
+  },
+  "description": "Prettier is an opinionated code formatter",
+  "documentationURL": "https://github.com/prettier/prettier",
+  "id": "prettier",
+  "installsAfter": ["./features/src/node/"],
+  "name": "Prettier (via npm)",
+  "options": {
+    "version": {
+      "default": "3.6.2",
+      "description": "https://npmjs.com/package/prettier?activeTab=versions",
+      "proposals": ["3.6.2"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
