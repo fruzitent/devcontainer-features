@@ -1,0 +1,38 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/shellcheck/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/shellcheck/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["timonwong.shellcheck"],
+      "settings": {
+        "shellcheck.customArgs": ["-x"]
+      }
+    }
+  },
+  "description": "ShellCheck, a static analysis tool for shell scripts",
+  "documentationURL": "https://github.com/koalaman/shellcheck",
+  "id": "shellcheck",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "ShellCheck (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "v0.11.0",
+      "description": "https://github.com/koalaman/shellcheck/releases",
+      "proposals": ["v0.11.0"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
