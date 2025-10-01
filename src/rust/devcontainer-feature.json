@@ -1,0 +1,40 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "CARGO_HOME": "/opt/rust/cargo/",
+    "PATH": "/opt/rust/cargo/bin:${PATH}",
+    "RUSTUP_HOME": "/opt/rust/rustup/"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/rust/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["rust-lang.rust-analyzer"],
+      "settings": {
+        "rust-analyzer.check.command": "clippy"
+      }
+    }
+  },
+  "description": "Empowering everyone to build reliable and efficient software",
+  "documentationURL": "https://github.com/rust-lang/rust",
+  "id": "rust",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "rust (via external)",
+  "options": {
+    "version": {
+      "default": "1.28.2",
+      "description": "https://github.com/rust-lang/rustup/tags",
+      "proposals": ["1.28.2"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
