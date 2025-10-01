@@ -1,0 +1,36 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/markdown-oxide/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/markdown-oxide/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["FelixZeller.markdown-oxide"],
+      "settings": {}
+    }
+  },
+  "description": "PKM Markdown Language Server",
+  "documentationURL": "https://github.com/Feel-ix-343/markdown-oxide",
+  "id": "markdown-oxide",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "markdown-oxide (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "v0.25.8",
+      "description": "https://github.com/Feel-ix-343/markdown-oxide/releases",
+      "proposals": ["v0.25.8"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
