@@ -1,0 +1,39 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/dockerfmt/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/dockerfmt/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["jkillian.custom-local-formatters"],
+      "settings": {
+        "[dockerfile]": { "editor.defaultFormatter": "jkillian.custom-local-formatters" },
+        "customLocalFormatters.formatters": [{ "command": "dockerfmt", "languages": ["dockerfile"] }]
+      }
+    }
+  },
+  "description": "Dockerfile formatter. a modern dockfmt",
+  "documentationURL": "https://github.com/reteps/dockerfmt",
+  "id": "dockerfmt",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "dockerfmt (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "v0.3.7",
+      "description": "https://github.com/reteps/dockerfmt/releases",
+      "proposals": ["v0.3.7"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
