@@ -16,6 +16,7 @@ apt-get -y update
 apt-get -y install --no-install-recommends \
     "ca-certificates" \
     "curl" \
+    "file" \
     "gpgv" \
     "jq" \
     "libarchive-tools" \
