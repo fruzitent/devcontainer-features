@@ -1,0 +1,36 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/docker-language-server/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/docker-language-server/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["docker.docker"],
+      "settings": {}
+    }
+  },
+  "description": "Language server for Dockerfiles, Compose files, and Bake files",
+  "documentationURL": "https://github.com/docker/docker-language-server",
+  "id": "docker-language-server",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "Docker Language Server (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "v0.18.0",
+      "description": "https://github.com/docker/docker-language-server/releases",
+      "proposals": ["v0.18.0"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
