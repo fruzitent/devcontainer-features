@@ -1,0 +1,37 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "NODE_PATH": "/opt/dockerfile-language-server/node_modules:${NODE_PATH}",
+    "PATH": "/opt/dockerfile-language-server/node_modules/.bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/root/.npm/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker"],
+      "settings": {}
+    }
+  },
+  "description": "A language server for Dockerfiles powered by Node.js, TypeScript, and VSCode technologies",
+  "documentationURL": "https://github.com/rcjsuen/dockerfile-language-server",
+  "id": "dockerfile-language-server",
+  "installsAfter": ["./features/src/node/"],
+  "name": "Dockerfile Language Server (via npm)",
+  "options": {
+    "version": {
+      "default": "0.14.1",
+      "description": "https://npmjs.com/package/dockerfile-language-server-nodejs?activeTab=versions",
+      "proposals": ["0.14.1"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
