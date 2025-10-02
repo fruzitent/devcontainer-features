@@ -1,0 +1,36 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/cargo-zigbuild/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/cargo-zigbuild/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  "description": "Compile Cargo project with zig as linker",
+  "documentationURL": "https://github.com/rust-cross/cargo-zigbuild",
+  "id": "cargo-zigbuild",
+  "installsAfter": ["./features/src/common-utils/", "./features/src/rust/", "./features/src/zig/"],
+  "name": "cargo-zigbuild (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "v0.20.1",
+      "description": "https://github.com/rust-cross/cargo-zigbuild/releases",
+      "proposals": ["v0.20.1"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
