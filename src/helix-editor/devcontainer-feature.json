@@ -1,0 +1,36 @@
+{
+  "$help": "https://containers.dev/implementors/features",
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "containerEnv": {
+    "PATH": "/opt/helix-editor/bin:${PATH}"
+  },
+  "customizations": {
+    "devpp": {
+      "mounts": [
+        {
+          "sharing": "locked",
+          "target": "/tmp/helix-editor/",
+          "type": "cache"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  "description": "A post-modern modal text editor",
+  "documentationURL": "https://github.com/helix-editor/helix",
+  "id": "helix-editor",
+  "installsAfter": ["./features/src/common-utils/"],
+  "name": "Helix (via GitHub Releases)",
+  "options": {
+    "version": {
+      "default": "25.07.1",
+      "description": "https://github.com/helix-editor/helix/releases",
+      "proposals": ["25.07.1"],
+      "type": "string"
+    }
+  },
+  "version": "0.0.0"
+}
